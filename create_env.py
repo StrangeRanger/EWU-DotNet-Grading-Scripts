@@ -31,7 +31,7 @@ def create_env(verbose=True, exit_on_not_exist=True):
         file.write(f"# GitHub details\n")
         file.write(f'GITHUB_USERNAME=""\n')
         file.write(f'GITHUB_REPOSITORY=""\n')
-        file.write(f'GITHUB_TOKEN=""\n\n')
+        file.write(f'LOCAL_GITHUB_TOKEN=""\n\n')
         file.write(f"# Due dates and time zone\n")
         file.write(f'DUE_DATE=""\n')
         file.write(f'REVIEW_DUE_DATE=""\n')

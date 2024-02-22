@@ -36,7 +36,7 @@ def main():
     # GitHub details.
     github_username: str = os.getenv("GITHUB_USERNAME") or "IntelliTect-Samples"
     repository: str = os.getenv("GITHUB_REPOSITORY") or None
-    token: str = os.getenv("GITHUB_TOKEN") or None
+    token: str = os.getenv("LOCAL_GITHUB_TOKEN") or None
 
     # Due dates and time zone.
     due_date: str = os.getenv("DUE_DATE") or None
