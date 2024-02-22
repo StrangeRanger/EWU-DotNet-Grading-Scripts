@@ -3,11 +3,31 @@
 # This script checks out the branch specified in $branch, for all subdirectories.
 #
 ########################################################################################
+#### [ Prepping ]
 
-# The branch to checkout.
-branch="Assignment5"
+
+# Check if a branch name is provided as an argument.
+if [[ -z $1 ]]; then
+    echo "No branch specified. Usage: $0 <branch_name>"
+    exit 1
+fi
+
+
+#### End of [ Prepping ]
+########################################################################################
+#### [ Variables ]
+
+
+# The branch to checkout, provided by the first script argument.
+branch="$1"
 # The current directory.
 current_dir=$(pwd)
+
+
+#### End of [ Variables ]
+########################################################################################
+#### [ Main ]
+#
 
 for i in *; do
     [[ -d $i ]] || continue
@@ -28,4 +48,8 @@ for i in *; do
         exit 1
     }
 done
+
+
+#### End of [ Main ]
+########################################################################################
 
