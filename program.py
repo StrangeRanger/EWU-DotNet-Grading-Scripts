@@ -16,6 +16,7 @@ import pytz
 import requests
 from dotenv import load_dotenv
 
+from create_env import create_env
 from print_table import print_pull_requests_table, print_reviews_table
 
 # [ Functions ]#########################################################################
@@ -25,27 +26,47 @@ def main():
     # [[ Setup ]]#######################################################################
 
     load_dotenv()  # Load variables from .env file
+    create_env(verbose=False)  # Create .env file if it doesn't exist
 
     # [[ Variables ]]###################################################################
 
+    # Verification failed.
+    validation_failed: bool = False
+
     # GitHub details.
-    github_username = "IntelliTect-Samples"
-    repository = "EWU-CSCD371-2024-Winter"
-    token = os.getenv("GITHUB_TOKEN")
+    github_username: str = os.getenv("GITHUB_USERNAME") or "IntelliTect-Samples"
+    repository: str = os.getenv("GITHUB_REPOSITORY") or None
+    token: str = os.getenv("GITHUB_TOKEN") or None
 
     # Due dates and time zone.
-    # due_date = "2024-02-13"
-    # review_due_date = "2024-02-14"
-    due_date = "2024-02-20"
-    review_due_date = "2024-02-21"
-    time_zone = "America/Los_Angeles"
+    due_date: str = os.getenv("DUE_DATE") or None
+    review_due_date: str = os.getenv("REVIEW_DUE_DATE") or None
+    time_zone: str = os.getenv("TIME_ZONE") or "America/Los_Angeles"
 
     # Title must contain one of the strings in the list.
-    # title_filters = ["5"]
-    title_filters = ["6"]
+    title_filters: list = os.getenv("TITLE_FILTERS") or ["Assignment"]
 
     # Whether to include closed pull requests.
-    include_closed = True
+    include_closed: bool = os.getenv("INCLUDE_CLOSED") or False
+
+    # [[ Validation ]]#################################################################
+
+    if not repository:
+        print("GitHub repository is not set.")
+        validation_failed = True
+    if not token:
+        print("GitHub token is not set.")
+        validation_failed = True
+    if not due_date:
+        print("Due date is not set.")
+        validation_failed = True
+    if not review_due_date:
+        print("Review due date is not set.")
+        validation_failed = True
+
+    if validation_failed:
+        print("Please set the required environment variables in an '.env' file.")
+        return
 
     # [[ Main ]]########################################################################
 
@@ -110,8 +131,8 @@ def get_pull_requests(
         days=1  # Add one day to the due date to include all pull requests on the due date.
     )
 
-    # NOTE: For debugging purposes, uncomment the following line to print the first pull request
-    #       in the list.
+    # NOTE: For debugging purposes, uncomment the following line to print the first pull
+    #       request in the list.
     # print(pull_requests[0], "\n")
 
     for pr in pull_requests:
@@ -137,7 +158,8 @@ def get_pull_requests(
             ),
         }
 
-        # Skip the pull request if the title doesn't contain one of the strings in the list.
+        # Skip the pull request if the title doesn't contain one of the strings in the
+        # list.
         if not any(title_filter in pr_data["title"] for title_filter in title_filters):
             continue
 
