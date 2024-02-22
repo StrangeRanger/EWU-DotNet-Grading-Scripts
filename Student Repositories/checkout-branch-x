@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#
+# This script checks out the branch specified in $branch, for all subdirectories.
+#
+########################################################################################
+
+# The branch to checkout.
+branch="Assignment5"
+# The current directory.
+current_dir=$(pwd)
+
+for i in *; do
+    [[ -d $i ]] || continue
+
+    cd "$i" || {
+        echo "Failed to change directory to '$i'..."
+        echo "Skipping test..."
+        continue
+    }
+
+    git checkout "$branch"
+    rm -r ./*
+    git restore \*
+
+    cd "$current_dir" || {
+        echo "Failed to change directory to '$current_dir'..."
+        echo "Exiting to avoid data loss..."
+        exit 1
+    }
+done
+
