@@ -2,10 +2,6 @@
 """
 This program helps simplify and automate the process of grading assignments for
 CSCD 371 – .NET Programming.
-
-NOTICE: This program was created with the help of ChatGPT-4, as I didn't want to spend
-        too much time on writing the code, when I should be grading assignments. Though,
-        I have gone through and thoroughly ensured that the code is working as expected.
 """
 # [ Imports ]###########################################################################
 
