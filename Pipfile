@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pytz = "~=2023.3.post1"
-requests = "~=2.31.0"
+requests = "~=2.32.2"
 prettytable = "~=3.9.0"
 python-dotenv = "~=1.0.1"
 
