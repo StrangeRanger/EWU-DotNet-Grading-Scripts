@@ -1,6 +1,7 @@
 # EWU .NET Grading Scripts
 
-[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://hthompson.dev/project-tracker#project-761888899) [![GitHub License](https://img.shields.io/github/license/StrangeRanger/EWU-DotNet-Grading-Scripts)](LICENSE)
+[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://hthompson.dev/project-tracker#project-761888899)
+[![GitHub License](https://img.shields.io/github/license/StrangeRanger/EWU-DotNet-Grading-Scripts)](LICENSE)
 
 This repository contains Python scripts to automate and simplify the grading process for CSCD 371 – .NET Programming at EWU.
 
