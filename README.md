@@ -5,12 +5,35 @@
 
 This repository contains Python scripts to automate and simplify the grading process for CSCD 371 – .NET Programming at EWU.
 
+<details>
+<summary><strong>Table of Contents</strong></summary>
+
+- [EWU .NET Grading Scripts](#ewu-net-grading-scripts)
+  - [Features](#features)
+  - [Requirements](#requirements)
+  - [Setup \& Usage](#setup--usage)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Install Dependencies](#2-install-dependencies)
+    - [3. Configure Environment Variables](#3-configure-environment-variables)
+      - [Environment Variables](#environment-variables)
+    - [4. Run the Script](#4-run-the-script)
+  - [Example Output](#example-output)
+  - [License](#license)
+
+</details>
+
 ## Features
 
 - Fetches pull requests from a specified GitHub repository
 - Filters PRs by title and due date
 - Displays PRs and peer reviews in formatted tables
 - Highlights on-time submissions and reviews
+
+## Requirements
+
+- Python 3.10 or higher
+- `pipenv` for dependency management
+- GitHub personal access token with **repo access**
 
 ## Setup & Usage
 
@@ -32,7 +55,15 @@ pipenv install
 
 ### 3. Configure Environment Variables
 
-Run `create_env.py` once to generate a `.env` file, or create it manually. Then fill in the required fields:
+To create your `.env` file, run:
+
+```bash
+pipenv run python create_env.py
+```
+
+Then fill in the required fields in the generated `.env` file.
+
+Alternatively, create `.env` manually and fill in these fields:
 
 ```
 GITHUB_USERNAME="<github-username>"
@@ -44,6 +75,8 @@ TIME_ZONE="America/Los_Angeles"
 TITLE_FILTERS=["Assignment"]
 INCLUDE_CLOSED=False
 ```
+
+#### Environment Variables
 
 - `GITHUB_USERNAME`: GitHub org/user that owns the repo
 - `GITHUB_REPOSITORY`: Repository name (e.g., `CSCD371-Assignments`)
@@ -78,3 +111,7 @@ Reviews for PR: Assignment 1
 | alice  |   bob    | APPROVED | 2025-07-26 10:00:00 |   Yes   | https://github.com/org/repo/pull/1#review-1 |
 +--------+----------+----------+---------------------+---------+---------------------------------------------+
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
