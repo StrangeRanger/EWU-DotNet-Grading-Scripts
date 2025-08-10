@@ -34,14 +34,13 @@ This repository contains Python scripts to automate and simplify the grading pro
   - On-time vs. late submission indicators
 - **Flexible Configuration**: Supports multiple repositories, custom due dates, and timezone handling
 
-
 ## Getting Started
 
 ### Prerequisites
 
-- **Python** 3.10 or higher
-- **pipenv** for dependency management
-- **GitHub personal access token** with repository access permissions
+- **Python**: Version 3.9 or higher
+- **pipenv**: For dependency management
+- **GitHub PAT**: A personal access token with repository access permissions
 
 ### Download and Setup
 
