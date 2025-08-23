@@ -135,35 +135,35 @@ Reviews for PR: Assignment 1
 <details>
 <summary><strong>"Failed to retrieve pull requests"</strong></summary>
 
-> - Verify your GitHub token has the correct permissions
-> - Check that the repository name and username are correct
-> - Ensure the repository exists and is accessible
+> - Verify your GitHub token has the correct permissions.
+> - Check that the repository name and username are correct.
+> - Ensure the repository exists and is accessible.
 
 </details>
 
 <details>
 <summary><strong>"GitHub token is not set"</strong></summary>
 
-> - Make sure your `.env` file exists in the project root
-> - Verify the `LOCAL_GITHUB_TOKEN` variable is properly set
-> - Check that there are no extra spaces or quotes in the token
+> - Make sure your `.env` file exists in the project root.
+> - Verify the `LOCAL_GITHUB_TOKEN` variable is properly set.
+> - Check that there are no extra spaces or quotes in the token.
 
 </details>
 
 <details>
 <summary><strong>No pull requests appear</strong></summary>
 
-> - Verify your `TITLE_FILTERS` match the actual PR titles
-> - Check if `INCLUDE_CLOSED` should be set to `True`
-> - Ensure the due date format is correct (YYYY-MM-DD)
+> - Verify your `TITLE_FILTERS` match the actual PR titles.
+> - Check if `INCLUDE_CLOSED` should be set to `True`.
+> - Ensure the due date format is correct (YYYY-MM-DD).
 
 </details>
 
 <details>
 <summary><strong>Time zone issues</strong></summary>
 
-> - Use standard timezone names (e.g., `America/Los_Angeles`, not `PST`)
-> - Verify the timezone is correct for your institution's location
+> - Use standard timezone names (e.g., `America/Los_Angeles`, not `PST`).
+> - Verify the timezone is correct for your institution's location.
 
 </details>
 
