@@ -1,4 +1,4 @@
-# EWU .NET Grading Scripts
+# EWU .NET Grading Tool
 
 [![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://hthompson.dev/project-tracker#project-761888899)
 
